@@ -29,9 +29,9 @@ Template.whiteboard_panel.events({
         Session.set('whiteboardName', wb.name);
     },
     'click #clearCanvas': function (event) {
-       console.log('clearCanvas');
-       //canvas.clearAll();
-        Meteor.call('clearCanvas');
+        var _id = Session.get('sessionId');
+        console.log('clearCanvas', _id);
+        Meteor.call('clearCanvas', _id);
     }
 });
 
